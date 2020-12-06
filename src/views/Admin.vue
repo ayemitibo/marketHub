@@ -1,78 +1,79 @@
 <template>
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-    <div>
-      <h6 class="text-blue float-left">Admin</h6>
-      <div
-        class="d-flex align-items-center float-right justify-content-between"
-      >
-        <p class="filter mr-2 mb-0">
-          FILTER
-        </p>
-        <select name="" id="" class="mr-2">
-          <option value="">Support</option>
-          <option value="">Super Admin</option>
-          <option value="">All</option>
-        </select>
-        <p class="mb-0">Active</p>
-        <input type="checkbox" name="" id="" class="mr-2" />
-        <p class="mb-0">Inactive</p>
-        <input type="checkbox" name="" id="" />
+  <div class="w-100">
+    <div class="col-12">
+      <div class="d-flex justify-content-end">
+        <div class="form-group">
+          <label class="mb-0">Active</label>
+          <input type="checkbox" name="" id="" class="mr-2" />
+        </div>
+        <div class="form-group">
+          <label class="mb-0">Inactive</label>
+          <input type="checkbox" name="" id="" class="" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <h6 class="text-blue">Admin</h6>
+        <div class="d-flex align-items-center float-right justify-content-between">
+          <p class="filter mr-2 mb-0 text-uppercase">filter</p>
+          <select name="" id="" class="mr-2">
+            <option value="">Support</option>
+            <option value="">Super Admin</option>
+            <option value="">All</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary">Create Admin</button>
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-5">
-      <div class="nametable row col-12">
-        <div class="row header">
-          <div class="cell">FIRST NAME</div>
-          <div class="cell">LAST NAME</div>
-          <div class="cell">USER TYPE</div>
-          <div class="cell">ACTIVE STATUS</div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell">
-            <span class="pencil-icon">
-              &#9998;
-            </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"><span class="pencil-icon"> &#9998;</span></div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell">
-            <span class="pencil-icon">
-              &#9998;
-            </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell">
-            <span class="pencil-icon">
-              &#9998;
-            </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell">
-            <span class="pencil-icon">
-              &#9998;
-            </span>
-          </div>
-        </div>
+
+    <div class="col-12 mt-4">
+      <div class="bg-white p-3">
+        <table class="table">
+          <caption>Admins Table</caption>
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">User Type</th>
+              <th scope="col">Active Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <span class="pencil-icon">
+                  &#9998;
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <span class="pencil-icon">
+                  &#9998;
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <span class="pencil-icon">
+                  &#9998;
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
