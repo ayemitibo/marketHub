@@ -1,3 +1,8 @@
+:root {
+  --primary: #52c7ff
+}
+
+
 /*==== CUSTOM STYLESHEET ====*/
 /* Fonts */
 @font-face {
@@ -783,6 +788,22 @@ header.navbar {
   box-shadow: none;
 }
 
+.btn-primary {
+  color: #fff !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: none;
+}
+
+.btn-primary.active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
 .btn-gray:hover {
   background-color: #dfdfdf;
   border: 1px solid transparent;
@@ -1084,6 +1105,21 @@ label {
   border-bottom: 1px solid #f5f5f5;
 }
 
+.table thead tr th {
+  border-top: 0 !important;
+  color: #616161 !important;
+  font-size: 18px !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+}
+
+.table td {
+  border-color: #f5f5f5;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  color: #616161;
+}
+
 .nametable .row:last-child .cell {
   border-bottom: none;
 }
@@ -1214,7 +1250,7 @@ label {
 
 /* Text Colors */
 .text-blue {
-  color: #1b55e2;
+  color: var(--primary);
 }
 
 .text-orange {

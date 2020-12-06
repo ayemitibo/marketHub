@@ -7,6 +7,7 @@ import DashboardWrapper from "@/components/Layout/DashboardWrapper";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
 import Admin from "../views/Admin.vue";
+import Users from "../views/Users.vue";
 
 Vue.use(Router);
 export const routes = [
@@ -37,6 +38,15 @@ export const routes = [
         path: "/account/admin",
         name: "Admin",
         component: Admin,
+        meta: {
+          title: "Market Hub - Welcome to Market Hub",
+          page_name: "Admin",
+        },
+      },
+      {
+        path: "/account/users",
+        name: "Users",
+        component: Users,
         meta: {
           title: "Market Hub - Welcome to Market Hub",
           page_name: "Admin",
