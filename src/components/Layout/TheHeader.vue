@@ -1,7 +1,7 @@
 <template>
   <!--  BEGIN NAVBAR  -->
-  <div class="header-container fixed-top" style="margin-left: 16em">
-    <header class="header navbar navbar-expand-sm">
+  <div class="header-container fixed-top bg-white" style="margin-left: 16em">
+    <header class="header navbar navbar-expand-sm border-0">
       <a
         href="javascript:void(0);"
         class="sidebarCollapse"
