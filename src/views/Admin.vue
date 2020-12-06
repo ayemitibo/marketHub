@@ -13,7 +13,9 @@
       </div>
       <div class="d-flex justify-content-between align-items-center">
         <h6 class="text-blue">Admin</h6>
-        <div class="d-flex align-items-center float-right justify-content-between">
+        <div
+          class="d-flex align-items-center float-right justify-content-between"
+        >
           <p class="filter mr-2 mb-0 text-uppercase">filter</p>
           <select name="" id="" class="mr-2">
             <option value="">Support</option>
@@ -21,14 +23,22 @@
             <option value="">All</option>
           </select>
         </div>
-        <button type="button" class="btn btn-primary">Create Admin</button>
+        <router-link
+          tag="button"
+          to="/account/admin-create-user"
+          type="button"
+          class="btn btn-primary"
+          >Create Admin</router-link
+        >
       </div>
     </div>
 
     <div class="col-12 mt-4">
       <div class="bg-white p-3">
         <table class="table">
-          <caption>Admins Table</caption>
+          <caption>
+            Admins Table
+          </caption>
           <thead>
             <tr>
               <th scope="col">First Name</th>

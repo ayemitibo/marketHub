@@ -7,17 +7,18 @@ import DashboardWrapper from "@/components/Layout/DashboardWrapper";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
 import Admin from "../views/Admin.vue";
+import AdminCreateUser from "../views/Admin-create-user.vue";
 import Users from "../views/Users.vue";
 
 Vue.use(Router);
 export const routes = [
   {
-    path: "/",
+    path: "/account",
     component: DashboardWrapper,
     redirect: "/account/dashboard",
     children: [
       {
-        path: "/account/dashboard",
+        path: "dashboard",
         name: "home",
         component: Home,
         meta: {
@@ -26,7 +27,16 @@ export const routes = [
         },
       },
       {
-        path: "/account/profile",
+        path: "admin-create-user",
+        name: "home",
+        component: AdminCreateUser,
+        meta: {
+          title: "Market Hub - Welcome to Market Hub",
+          page_name: "Dashboard",
+        },
+      },
+      {
+        path: "profile",
         name: "Profile",
         component: Profile,
         meta: {
@@ -35,7 +45,7 @@ export const routes = [
         },
       },
       {
-        path: "/account/admin",
+        path: "admin",
         name: "Admin",
         component: Admin,
         meta: {
@@ -44,7 +54,7 @@ export const routes = [
         },
       },
       {
-        path: "/account/users",
+        path: "users",
         name: "Users",
         component: Users,
         meta: {
