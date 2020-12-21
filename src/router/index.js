@@ -9,9 +9,15 @@ import Profile from "../views/Profile.vue";
 import Admin from "../views/Admin.vue";
 import AdminCreateUser from "../views/Admin-create-user.vue";
 import Users from "../views/Users.vue";
+import Login from "../views/Login.vue";
 
 Vue.use(Router);
 export const routes = [
+  {
+    path: "/",
+    name: "Login",
+    component: Login,
+  },
   {
     path: "/account",
     component: DashboardWrapper,
@@ -63,11 +69,5 @@ export const routes = [
         },
       },
     ],
-  },
-  {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
 ];

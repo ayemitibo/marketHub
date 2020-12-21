@@ -6,7 +6,9 @@
         class="analytics__card col-md-3 d-flex flex-column justify-content-center align-items-center"
       >
         <div class="fs-24 fw-600">Businesses</div>
-        <div class="fs-24 fw-600" style="color: #ff4f17">232</div>
+        <div class="fs-24 fw-600" style="color: #ff4f17">
+          {{ businessCount }}
+        </div>
       </div>
       <div
         class="analytics__card col-md-3 d-flex flex-column justify-content-center align-items-center"
@@ -89,16 +91,30 @@
   </div>
 </template>
 <script>
-import { db } from "../firebase";
+import { mapActions, mapState, mapGetters } from "vuex";
 export default {
-  name: "Home",
-  components: {},
   data() {
     return {};
   },
-  methods: {},
+  computed: {
+    ...mapState("users", {
+      users: (state) => state.users,
+    }),
+    businessCount() {
+      return [
+        ...this.users.filter((item) => {
+          return item.userType === "business_signup";
+        }),
+      ].length;
+    },
+  },
+  methods: {
+    ...mapActions({
+      getUsers: "users/getUsers",
+    }),
+  },
   async mounted() {
-    const business = await db.collection("business").get();
+    this.getUsers();
   },
 };
 </script>

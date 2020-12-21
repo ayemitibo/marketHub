@@ -10,7 +10,9 @@
     <div class="col-12 mt-4">
       <div class="bg-white p-3">
         <table class="table">
-          <caption>Users Table</caption>
+          <caption>
+            Users Table
+          </caption>
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -24,43 +26,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr v-for="(user, index) in users" :key="index">
+              <td>{{ user.firstName }} {{ user.lastName }}</td>
+              <td>{{ user.businessName }}</td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <span class="pencil-icon">
-                  &#9998;
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <span class="pencil-icon">
-                  &#9998;
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{ user.telephone }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.userType }}</td>
               <td></td>
               <td></td>
               <td>
@@ -75,6 +47,27 @@
     </div>
   </div>
 </template>
+<script>
+import { mapActions, mapState } from "vuex";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState("users", {
+      users: (state) => state.users,
+    }),
+  },
+  methods: {
+    ...mapActions({
+      getUsers: "users/getUsers", // map `this.add()` to `this.$store.dispatch('increment')`
+    }),
+  },
+  async mounted() {
+    this.getUsers();
+  },
+};
+</script>
 <style scoped>
 span.pencil-icon {
   float: right;

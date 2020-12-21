@@ -75,11 +75,18 @@
 </template>
 
 <script>
+import { auth } from "../../firebase";
 export default {
   data() {
     return {};
   },
   methods: {},
+  async mounted() {
+    await auth.onAuthStateChanged((user) => {
+      const { email } = user;
+      this.$store.dispatch("auth/setCurrentUser", { email });
+    });
+  },
 };
 </script>
 
