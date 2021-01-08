@@ -14,13 +14,15 @@
         class="analytics__card col-md-3 d-flex flex-column justify-content-center align-items-center"
       >
         <div class="fs-24 fw-600">Customers</div>
-        <div class="fs-24 fw-600" style="color: #ffdd65">320</div>
+        <div class="fs-24 fw-600" style="color: #ffdd65">{{ userCount }}</div>
       </div>
       <div
         class="analytics__card col-md-3 d-flex flex-column justify-content-center align-items-center"
       >
         <div class="fs-24 fw-600">Users</div>
-        <div class="fs-24 fw-600" style="color: #3edfaa">400</div>
+        <div class="fs-24 fw-600" style="color: #3edfaa">
+          {{ users.length }}
+        </div>
       </div>
     </div>
     <div class="d-flex justify-content-center mt-5">
@@ -104,6 +106,13 @@ export default {
       return [
         ...this.users.filter((item) => {
           return item.userType === "business_signup";
+        }),
+      ].length;
+    },
+    userCount() {
+      return [
+        ...this.users.filter((item) => {
+          return item.userType === "customer_signup";
         }),
       ].length;
     },

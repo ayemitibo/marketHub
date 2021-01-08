@@ -41,7 +41,7 @@
                   type="text"
                   name="full_name"
                   class="form-control input-bordered"
-                  v-model="full_name"
+                  v-model="userDetail.displayName"
                   placeholder="Enter your Full Name"
                 />
               </div>
@@ -54,7 +54,7 @@
                   type="email"
                   name="email"
                   class="form-control input-bordered"
-                  v-model="email"
+                  v-model="userDetail.email"
                   placeholder="Enter your Email"
                 />
               </div>
@@ -90,7 +90,7 @@
                   type="phone_number"
                   name="phone_number"
                   class="form-control input-bordered"
-                  v-model="phone_number"
+                  v-model="userDetail.phone_number"
                   placeholder="Enter your Phone Number"
                 />
               </div>
@@ -122,6 +122,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Profile",
   data() {
@@ -132,6 +133,11 @@ export default {
       phone_number: "",
       message: "",
     };
+  },
+  computed: {
+    ...mapState("auth", {
+      userDetail: (state) => state.userDetail,
+    }),
   },
   methods: {},
 };

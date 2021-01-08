@@ -83,8 +83,7 @@ export default {
   methods: {},
   async mounted() {
     await auth.onAuthStateChanged((user) => {
-      const { email } = user;
-      this.$store.dispatch("auth/setCurrentUser", { email });
+      this.$store.dispatch("auth/setCurrentUser", user);
     });
   },
 };
